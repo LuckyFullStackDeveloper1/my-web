@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> J.S</title>
+    <style>
+        .main {
+            background-color: chartreuse;
+            height: 60vh;
+            width: 60vw;
+            margin-left: 200px;
+        }
+
+        #display {
+            background-color: pink  ;
+            height: 40vh;
+        }
+
+        #submit {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(16, 110, 210);
+        }
+    </style>
+    <script>
+        function displayFunction(shagunone,shaguntwo) {
+            let collectedvalue = add( shagunone,shaguntwo );
+            document.getElementById("display").innerHTML = 
+            " The total amount of shguon :" + collectedvalue;
+        }
+        function add (numberone,numbertwo) {
+            let total = numberone + numbertwo;
+           return total;
+        }
+        function clearFunction() {
+            document.getElementById("display").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <h1 id="display"></h1>
+        <button id="submit" onclick="displayFunction( 30000, 10000 )">CLICK HERE</button>
+        <button id="submit" onclick="clearFunction()" style="background-color: yellow;">CLEAR</button>
+    </div>
+</body>
+
+</html>
