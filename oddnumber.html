@@ -1,0 +1,86 @@
+<!Doctype html>
+<html>
+
+<head>
+    <style>
+        .box {
+            border-style: solid;
+            border-width: 20px;
+            width: 650px;
+            background-color: chocolate;
+            margin-left: 300px;
+        }
+
+        .one {
+
+            background-color: rgb(139, 255, 255);
+            width: 650px;
+            height: 300px;
+            padding: 1px;
+           
+
+        }
+    </style>
+    <script>
+        var num, temp;
+        function fun() {
+            num = parseInt(document.getElementById("num").value);
+            if (num) {
+                temp = document.getElementById("res");
+                temp.style.display = "block";
+                if (num % 2 == 0)
+                    document.getElementById("res").innerHTML = "Even";
+                else
+                    document.getElementById("res").innerHTML = "Odd";
+            }
+        }
+
+     ages = [18, 33, 18, 40];
+
+        function checkAge(age) {
+            return age < (document.getElementById("num").value);
+        }
+
+        function myFunction() {
+            document.getElementById("res").innerHTML = ages.every(checkAge);
+        
+            if (num % 2 == 0)
+                    document.getElementById("res").innerHTML = " You Are  Eligible For vote";
+                else
+             
+                document.getElementById("res").innerHTML = " You Are Not Eligible For vote";
+        }
+    </script>
+
+</head>
+
+</head>
+
+
+
+
+<body>
+    <div class="box">
+
+        <div class="one">
+            <h2 style="font-family: cursive; margin-left: 30px; margin-top: 40px;"> Enter the Number : <input
+                    style="height: 30px;" id="num">
+
+                <button onclick="fun()" style="font-family: cursive; height: 30px; ; margin-left: 6px;">Check
+                    even/odd</button>
+            </h2>
+            <p id="res" style="display:none; font-family: cursive;;margin-left: 100px;"></p>
+           
+            <button  onclick="myFunction()"  style="font-family: cursive; height: 30px; margin-top: 48px; margin-left: 10px;">Eligible OR Not</button>  
+
+            <p id="res" style="display:none; font-family: cursive;;margin-left: 100px;"></p>
+        </div>
+
+
+
+
+
+    </div>
+</body>
+
+</html>
