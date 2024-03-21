@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Bill Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        input[type="number"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Electric Bill Calculator</h1>
+    <div>
+        <label for="usage">Electric Usage (kWh):</label>
+        <input type="number" id="usage" min="0">
+    </div>
+    <div>
+        <button onclick="calculateBill()">Calculate</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        function calculateBill() {
+            var usage = parseFloat(document.getElementById('usage').value);
+            var rate = 0.12; // Rate per kWh (adjust as needed)
+            
+            var bill = usage * rate;
+            
+            document.getElementById('result').innerHTML = "Your electric bill is: $" + bill.toFixed(2);
+        }
+    </script>
+</body>
+</html>

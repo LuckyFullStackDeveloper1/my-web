@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Song </title>
+  <style>
+    /* main */
+    .main {
+
+
+      height: 300px;
+      width: 500px;
+      border-style: solid;
+      background-image: url(./my_image/songbacjpeg.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 10%;
+    }
+
+
+    /* button */
+    .play {
+      background-color: lightblue;
+      height: 50px;
+      width: 100px;
+
+      ;
+      border-radius: 50%;
+    }
+
+    .Pause {
+      height: 50px;
+      width: 100px;
+      background-color: lightcoral;
+      border-radius: 50%;
+    }
+
+
+
+
+    .Next {
+      background-color: cadetblue;
+      height: 50px;
+      width: 100px;
+      border-radius: 50%;
+    }
+
+
+
+
+    /* main-image  */
+    .main-two {
+      background-image: url("./my_image/songggggg.png");
+      height: 200px;
+      width: 500px;
+      margin-left: 250px;
+      background-repeat: no-repeat;
+
+    }
+  </style>
+</head>
+
+<!-- BODY  -->
+
+<body>
+  <audio id="myAudio"></audio>
+  <!-- DIV-CLASS -->
+
+
+  </div>
+  <div class="main">
+
+
+    <div class="three"> <button class="play" onclick="playAudio()">Play</button></div>
+    <br><br>
+    <div class="one"> <button class="Pause" onclick="pauseAudio()">Pause</button></div>
+    <br><br>
+
+    <div class="four"> <button class="Next" onclick="nextSong()">Next Song</button> </div>
+
+  </div>
+  <!-- Script -->
+  <script>
+    let songs = [" my_image/295(PaglaSongs) (1).mp3", "my_image/128-Main Rang Sharbaton Ka - Phata Poster Nikhla Hero 128 Kbps.mp3", "my_image/Besharam Bewaffa 128 Kbps.mp3", "my_image/Game - Sidhu Moose Wala (1).mp3", "my_image/Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3", "my_image/Tu Hai Kahan(PagalWorld.com.pe).mp3", "my_image/Ye Tune Kya Kiya-(PagalWorld).mp3"];
+    let currentSongIndex = 0;
+    const audio = document.getElementById("myAudio");
+    // 
+    function playAudio() {
+      audio.play();
+    }
+
+    function pauseAudio() {
+      audio.pause();
+    }
+
+
+
+    function nextSong() {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      audio.src = songs[currentSongIndex];
+      audio.play();
+    }
+  </script>
+  </div>
+</body>
+
+</html>

@@ -3,33 +3,38 @@
 
 <head>
     <style>
-        /* main box */
+        
+        /*  box */
         .box {
+            animation: forwards;
             border-style: solid;
             border-width: 30px;
             width: 600px;
-            background-color: rgb(231, 184, 55);
-            margin-left: 300px;
+            background-color: #C8DBBE;
+            margin-left: 200px;
             margin-top: 50px;
-            border-color: rgb(247, 255, 132);
-            border-right-color: aqua;
-            border-top-color: blue;
-            border-bottom-color: rgb(132, 255, 0);
-            border-left-color: deeppink;
-            border-radius: 50px;
+            border-left-color: #FC6736;
+            border-right-color: #FFAD84;
+            border-top-color: #FF7ED4;
+            border-bottom-color: #37B5B6;
+            border-radius: 10px;
+           
+
         }
+
         /* display */
         #display {
             height: 100px;
             background-color: rgb(255, 166, 166);
             width: 30vw;
             border-radius: 20px;
-            margin-left: 5vw;
+            margin-left: 11 vw;
             display: grid;
             justify-content: center;
             align-items: center;
             border-style: solid;
-         }
+            border-width: 5px;
+        }
 
         /* box two */
 
@@ -42,26 +47,28 @@
 
         /* eligible */
 
-        .input{
+        .input {
             height: 30px;
             width: 100px;
             margin-left: 120px;
             color: red;
         }
-        
+
         /* check butten */
 
         .check {
-            font-family: cursive;
+            font-family: cursive;   
             height: 40px;
-            background-color: yellow;
+            background-color: #ffff01;
             color: rgb(255, 25, 0);
             width: 200px;
             border-width: 5px;
             margin-left: 200px;
+            border-color: rgb(255, 112, 91);
         }
+        
     </style>
-
+        
 
     <script>
 
@@ -72,9 +79,9 @@
             number = document.getElementById("one").value;
 
             if (number % 2 == 0) {
-                document.getElementById("display").innerHTML = "This number is even";
+                document.getElementById("display").innerHTML = "This number is even ✓";
             } else {
-                document.getElementById("display").innerHTML = "This number is odd";
+                document.getElementById("display").innerHTML = "This number is odd ✖︎";
             }
         }
         // check for  vote
@@ -83,9 +90,9 @@
             vote = document.getElementById("one").value;
 
             if (vote >= 18) {
-                document.getElementById("display").innerHTML = "Eligible for vote.";
+                document.getElementById("display").innerHTML = "Eligible f☺︎r vote  ✓";
             } else {
-                document.getElementById("display").innerHTML = "Not eligible for vote.";
+                document.getElementById("display").innerHTML = "Not Eligible f☹︎r vote ✖︎";
             }
         }
 
@@ -96,9 +103,9 @@
             y = Number(document.getElementById("two").value);
 
             if (x == y) {
-                document.getElementById("display").innerHTML = "Number is equal.";
+                document.getElementById("display").innerHTML = "Number is equal ✓";
             } else {
-                document.getElementById("display").innerHTML = "Number is not equal.";
+                document.getElementById("display").innerHTML = "Number is not equal ✖︎";
             }
         }
 
@@ -110,15 +117,19 @@
     </script>
 </head>
 
-<body>
+<body class="main">
+   
     <div class="box">
+        
         <!-- display -->
-        <h1 style="font-family:monospace;;" id="display"></h1>
+        <h1 style="font-family:monospace" id="display"></h1>
         <!-- input -->
         <div class="one">
-            <input  style="font-family: cursive;" id="one" class="input">↩︎
-                            
-            <input style="font-family: cursive;" id="two"  class="input">↩︎
+            <input style="font-family: cursive; border-width: 4px; border-color: rgb(75, 255, 240);" id="one"
+                class="input">↩︎
+
+            <input style="font-family: cursive;  border-width: 4px; border-color: rgb(89, 255, 252);" id="two"
+                class="input">↩︎
             <br>
             <br><br>
 
@@ -129,7 +140,7 @@
             <button onclick="check()" class="check">Check For Vote </button>
             <br>
             <br>
-            <button  onclick="equal()" class="check">Check Number  Equal or Not</button>
+            <button onclick="equal()" class="check">Check Number Equal or Not</button>
             <br>
             <br>
             <button class="check" onclick="clearFunction()">Clear</button>
@@ -139,10 +150,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
