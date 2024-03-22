@@ -29,6 +29,8 @@
       border-radius: 50%;
     }
 
+
+
     .Pause {
       height: 50px;
       width: 100px;
@@ -58,6 +60,17 @@
       background-repeat: no-repeat;
 
     }
+
+    .lucky {
+      display: flex;
+      flex-direction: column;
+      
+      justify-content: space-around;
+      /* flex-direction: row; */
+      justify-content: center;
+      align-items: center;
+  
+    }
   </style>
 </head>
 
@@ -68,16 +81,17 @@
   <!-- DIV-CLASS -->
 
 
-  </div>
+
   <div class="main">
 
+    <div class="lucky">
+      <div class="three"> <button class="play" onclick="playAudio()">▲</button></div>
+      <br><br>
+      <div class="one"> <button class="Pause" onclick="pauseAudio()">❑</button></div>
+      <br><br>
 
-    <div class="three"> <button class="play" onclick="playAudio()">Play</button></div>
-    <br><br>
-    <div class="one"> <button class="Pause" onclick="pauseAudio()">Pause</button></div>
-    <br><br>
-
-    <div class="four"> <button class="Next" onclick="nextSong()">Next Song</button> </div>
+      <div class="four"> <button class="Next" onclick="nextSong()">⇥</button> </div>
+    </div>
 
   </div>
   <!-- Script -->
@@ -86,7 +100,7 @@
     let currentSongIndex = 0;
     const audio = document.getElementById("myAudio");
     // 
-    function playAudio() {
+          function playAudio() {
       audio.play();
     }
 
