@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Checker</title>
+    <style>
+        /* Main box */
+        .box {
+            border: 30px solid;
+            width: 600px;
+            background-color: rgb(188, 255, 94);
+            margin: 50px auto;
+            border-radius: 50px;
+            padding: 20px;
+        }
+
+        /* Display */
+        #display {
+            height: 100px;
+            background-color: rgb(255, 166, 166);
+            width: 30vw;
+            border-radius: 20px;
+            margin: 0 auto;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid;
+            font-family: monospace;
+        }
+
+        /* Box two */
+        .one {
+            background-color: gray;
+            padding: 1px;
+        }
+
+        /* Input */
+        .input {
+            height: 30px;
+            width: 100px;
+            margin-left: 120px;
+            color: red;
+            font-family: cursive;
+            border: 4px solid;
+        }
+
+        /* Check button */
+        .check {
+            font-family: cursive;
+            height: 40px;
+            background-color: #ffff01;
+            color: rgb(255, 25, 0);
+            width: 200px;
+            border: 5px solid rgb(255, 112, 91);
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- Display -->
+        <div id="display"></div>
+
+        <!-- Input -->
+        <div class="one">
+            <input id="one" class="input">
+            <input id="two" class="input">
+            <br><br>
+
+            <!-- Buttons -->
+            <button onclick="result()" class="check">Check Even or Odd</button>
+            <button onclick="check()" class="check">Check For Vote</button>
+            <button onclick="equal()" class="check">Check Number Equal or Not</button>
+            <button onclick="clearFunction()" class="check">Clear</button>
+        </div>
+    </div>
+
+    <script>
+        // Check if the number is even or odd
+        function result() {
+            const number = document.getElementById("one").value;
+            if (number % 2 === 0) {
+                document.getElementById("display").innerHTML = "This number is even";
+            } else {
+                document.getElementById("display").innerHTML = "This number is odd";
+            }
+        }
+
+        // Check if eligible for vote
+        function check() {
+            const vote = document.getElementById("one").value;
+            if (vote >= 18) {
+                document.getElementById("display").innerHTML = "Eligible for vote.";
+            } else {
+                document.getElementById("display").innerHTML = "Not eligible for vote.";
+            }
+        }
+
+        // Check if the numbers are equal
+        function equal() {
+            const x = Number(document.getElementById("one").value);
+            const y = Number(document.getElementById("two").value);
+            if (x === y) {
+                document.getElementById("display").innerHTML = "Numbers are equal.";
+            } else {
+                document.getElementById("display").innerHTML = "Numbers are not equal.";
+            }
+        }
+
+        // Clear the display
+        function clearFunction() {
+            document.getElementById("display").innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

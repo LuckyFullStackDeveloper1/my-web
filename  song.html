@@ -3,118 +3,168 @@
 
 <head>
 
-  <title>Song </title>
+  <title>music play </title>
   <style>
-    /* main */
+    /* button */
+
     .main {
-
-
-      height: 300px;
-      width: 500px;
-      border-style: solid;
-      background-image: url(./my_image/songbacjpeg.jpeg);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      height: 54vh;
+      background-image: url(./Home-image/computer.png);
+      width: 31vw;
+      margin-left: 300px;
+      margin-top: 100px;
       background-repeat: no-repeat;
       background-size: cover;
-      border-radius: 10%;
+
+
+
     }
 
+    /* body */
+    body {
+      background-image: url(../my_image/BBBB.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+
+    }
+
+    /* volume */
+    .volume {
+      margin-left: 450px;
+
+    }
+
+    v {
+      height: 2vh;
+      width: 8vw;
+    }
+
+    .one {
+      margin-top: 204px;
+      margin-left: -175px;
+    }
+
+    .one1 {
+      margin-top: 205px;
+      margin-left: -10px;
+    }
+
+    .one2 {
+      margin-top: 204px;
+      margin-left: -15px;
+    }
+
+    .one3 {
+      margin-top: 204px;
+      margin-left: -15px;
+    }
 
     /* button */
-    .play {
-      background-color: lightblue;
-      height: 50px;
-      width: 100px;
-
-      ;
-      border-radius: 50%;
-    }
-
-
-
-    .Pause {
-      height: 50px;
-      width: 100px;
-      background-color: lightcoral;
-      border-radius: 50%;
-    }
-
-
-
-
-    .Next {
-      background-color: cadetblue;
-      height: 50px;
-      width: 100px;
-      border-radius: 50%;
-    }
-
-
-
-
-    /* main-image  */
-    .main-two {
-      background-image: url("./my_image/songggggg.png");
-      height: 200px;
-      width: 500px;
-      margin-left: 250px;
-      background-repeat: no-repeat;
+    .button {
+      border-radius: 150%;
+      height: 70px;
+      width: 10px;
 
     }
 
-    .lucky {
-      display: flex;
-      flex-direction: column;
-      
-      justify-content: space-around;
-      /* flex-direction: row; */
-      justify-content: center;
-      align-items: center;
-  
+    .option {
+      font-family: 'Courier New', Courier, monospace;
+      margin-top: 67px;
+      width: 160px;
+      margin-left: 103px;
+
+
+
+    }
+
+    body {
+      background-color: rgb(159, 137, 123);
     }
   </style>
+
 </head>
 
 <!-- BODY  -->
 
 <body>
+
   <audio id="myAudio"></audio>
   <!-- DIV-CLASS -->
-
-
-
   <div class="main">
+    <!-- option -->
+    <div class="option">
+      <select id="options" onchange="openLink()">
+        <option> OPTIONS👁️‍🗨️ CHOSE YOUR APP 🎵 </option>
+        <option value="https://www.youtube.com/"> YOUTUBE 🎧 ⟿</option>
+        <option value="https://music.youtube.com/"> MUSIC 🎧 ⟿</option>
+        <option value="https://open.spotify.com/"> SPOTIFY 🎧 ⟿</option>
+        <option value="https://gaana.com/"> GAANA 🎧 ⟿</option>
+        <option value="https://www.jiosaavn.com/"> JIOSAAVN 🎧 ⟿</option>
 
-    <div class="lucky">
-      <div class="three"> <button class="play" onclick="playAudio()">▲</button></div>
-      <br><br>
-      <div class="one"> <button class="Pause" onclick="pauseAudio()">❑</button></div>
-      <br><br>
-
-      <div class="four"> <button class="Next" onclick="nextSong()">⇥</button> </div>
+      </select>
     </div>
 
+    <div class="one" onclick="previousAudio()"><img style=" border-radius: 50%;" src="./Home-image/previouspng.png"
+        height="72px" width="80px"></div>
+    <div class="one1" onclick="playAudio()"><img style=" border-radius: 50%;" src="./Home-image/playp.png" height="70px"
+        width="80px"></div>
+    <div class="one2" onclick="pauseAudio()"><img style=" border-radius: 50%;" src="./Home-image/stop.png" height="70px"
+        width="80px"></div>
+    <div class="one3" onclick="nextSong()"><img style=" border-radius: 50%;" src="./Home-image/next.png" height="70px "
+        width="80px"></div>
+
   </div>
-  <!-- Script -->
+
+  <!--  lable -->
+
+  <label class="volume" for="range"></label>
+  <input class="v" type="range" min="0" max="2" step="0.1" value="1">
+
+  <!--script  -->
   <script>
-    let songs = [" my_image/295(PaglaSongs) (1).mp3", "my_image/128-Main Rang Sharbaton Ka - Phata Poster Nikhla Hero 128 Kbps.mp3", "my_image/Besharam Bewaffa 128 Kbps.mp3", "my_image/Game - Sidhu Moose Wala (1).mp3", "my_image/Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3", "my_image/Tu Hai Kahan(PagalWorld.com.pe).mp3", "my_image/Ye Tune Kya Kiya-(PagalWorld).mp3"];
-    let currentSongIndex = 0;
-    const audio = document.getElementById("myAudio");
-    // 
-          function playAudio() {
-      audio.play();
+
+    function openLink() {
+      var selectBox = document.getElementById("options");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      window.open(selectedValue, "_blank");
     }
 
+
+
+    let songs = ["image_project/Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3", "image_project/Game - Sidhu Moose Wala (1).mp3", "image_project/Besharam Bewaffa 128 Kbps.mp3", "image_project/128-Main Rang Sharbaton Ka - Phata Poster Nikhla Hero 128 Kbps.mp3", "image_project/Tu Hai Kahan(PagalWorld.com.pe).mp3  "];
+    let currentSongIndex = 0;
+    const audio = document.getElementById("myAudio");
+    // play
+    function playAudio() {
+      audio.play();
+    }
+    // pause
     function pauseAudio() {
       audio.pause();
     }
-
-
-
+    // next
     function nextSong() {
       currentSongIndex = (currentSongIndex + 1) % songs.length;
       audio.src = songs[currentSongIndex];
       audio.play();
     }
+    // previous
+    function previousAudio() {
+      if (currentSongIndex > 0) {
+        currentSongIndex--;
+      } else {
+        currentSongIndex = songs.length - 1;
+      }
+      audio.src = songs[currentSongIndex];
+      audio.play();
+    }
+    // close 
   </script>
   </div>
 </body>
